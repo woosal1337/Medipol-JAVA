@@ -18,6 +18,6 @@ public class Third {
             }
         }
         // Printing out the total sum at the end:
-        System.out.println("The total sum of the integers that are divisible by either 3 or 5 starting from 1 to 50 is: "+ sum);
+        System.out.println("The total sum of the integers that are divisible by either 3 or 5 starting from 1 to 50 is: " + sum);
     }
 }

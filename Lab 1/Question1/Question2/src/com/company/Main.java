@@ -11,7 +11,7 @@ public class Main {
         if (charInput.equalsIgnoreCase("a") || charInput.equalsIgnoreCase("e") || charInput.equalsIgnoreCase("i") || charInput.equalsIgnoreCase("o") || charInput.equalsIgnoreCase("u")) {
             System.out.println(charInput + " is a vowel.");
         } else {
-            System.out.println(charInput + " is a constant.");
+            System.out.println(charInput + " is a consonant.");
         }
     }
 }

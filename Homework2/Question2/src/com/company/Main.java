@@ -21,13 +21,55 @@ public class Main {
         rows = scanner.nextInt();
         columns = scanner.nextInt();
 
-        int[][] a = r
+        int[][] a = readMatrix(rows, columns);
+        rows = scanner.nextInt();
+        columns = scanner.nextInt();
 
+        int[][] b = readMatrix(rows, columns);
+        rows = scanner.nextInt();
+        columns = scanner.nextInt();
 
+        int[][] c = readMatrix(rows, columns);
 
+        System.out.println();
+        System.out.println(" ******* Matrix A *******");
+        printMatrix(a);
 
+        System.out.println();
+        System.out.println(" ******* Matrix B *******");
+        printMatrix(b);
 
+        System.out.println();
+        System.out.println(" ******* Matrix C *******");
+        printMatrix(c);
 
+        System.out.println();
+        System.out.println(" ******* Matrix D *******");
+        printMatrix(d);
     }
+
+
+    public static int[][] readMatrix(int rows, int columns) {
+        int[][] result = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                result[i][j] = scanner.nextInt();
+            }
+        }
+        return result;
+    }
+
+    public static int[][] generateMatrix(int rows, int columns) {
+        int[][] result = new int[rows][columns];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
+                result[i][j] = (int) (Math.random() * 100) + 1;
+            }
+        }
+        return result;
+    }
+
+    
+
 
 }

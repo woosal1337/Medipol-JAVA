@@ -3,55 +3,32 @@ package com.company;
 public class Main {
     public static void main(String[] args) {
 
-        class PersonAddress {
-            public String personName;
-            public String personLastName;
-            public String personMail;
-            public String personNumber;
+        // First person1 instance based on the PersonAddress class
+        PersonAdress person1 = new PersonAdress();
+        person1.setpersonName("Vusal");
+        person1.setpersonLastName("Ismayilov");
+        person1.setpersonMail("woosal@protonmail.com");
+        person1.setpersonNumber("+905395740062");
+        System.out.println("User details are as following:\n" +
+                person1.getpersonName() + " " +
+                person1.getpersonLastName() + " " +
+                person1.getpersonMail() + " " +
+                person1.getpersonNumber() + "\n");
 
+        // Person2 second new instance is created to compare at the end based on the solely names
+        PersonAdress person2 = new PersonAdress();
+        person2.setpersonName("Vusal");
+        person2.setpersonLastName("Chalabi");
+        person2.setpersonMail("woosal@protonmail.com");
+        person2.setpersonNumber("+905395740062");
+        System.out.println("User details are as following:\n" +
+                person2.getpersonName() + " " +
+                person2.getpersonLastName() + " " +
+                person2.getpersonMail() + " " +
+                person2.getpersonNumber() + "\n");
 
-            public PersonAddress(String personName, String personLastName, String personMail, String personNumber){
-                this.personName = personName;
-                this.personLastName = personLastName;
-                this.personMail = personMail;
-                this.personNumber = personNumber;
-            }
-
-            public String getpersonName() {
-                return personName;
-            }
-
-            public String getpersonLastName() {
-                return personLastName;
-            }
-
-            public String getpersonMail() {
-                return personMail;
-            }
-
-            public String getpersonNumber() {
-                return personNumber;
-            }
-
-
-            public void setpersonName(String personName) {
-                this.personName = personName;
-            }
-
-            public void setpersonLastName(String personLastName) {
-                this.personLastName = personLastName;
-            }
-
-            public void setpersonMail(String personMail) {
-                this.personMail = personMail;
-            }
-
-            public void setpersonNumber(String personNumber) {
-                this.personNumber = personNumber;
-            }
-        }
-
-        
-
+        // Checking whether the 2 given instances are equal based on the solely names
+        System.out.println(person1.getpersonName() == person2.getpersonName());
+        System.out.println(person1.getpersonLastName() == person2.getpersonLastName());
     }
 }

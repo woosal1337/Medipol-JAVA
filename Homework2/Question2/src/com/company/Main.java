@@ -69,7 +69,10 @@ public class Main {
         return result;
     }
 
-    
+    public static void printMatrix(int[][] matrix) {
+        int rows = matrix.length;
+        int columns = matrix[0].length;
+    }
 
 
 }

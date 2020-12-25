@@ -49,3 +49,11 @@ public class Main {
         System.out.println(thisIsClassA.A + thisIsClassB.B + thisIsClassC.C + thisIsClassD.D);
     }
 }
+
+/*
+Name : Vusal Ismayilov
+Student ID: 64190012
+Department: Computer Engineering
+
+Java Lab Assignment 5.0
+*/

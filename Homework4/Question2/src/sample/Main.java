@@ -1,26 +1,22 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.geometry.Orientation;
-import javafx.geometry.Point2D;
-import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
-import javafx.scene.layout.VBox;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+
 
 public class Main extends Application {
 
@@ -208,27 +204,121 @@ public class Main extends Application {
         checkbox.selectedProperty().addListener(
                 (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
                     textfield3.setText("My first checkbox has been clicked!");
+                    System.out.println("My first checkbox has been clicked!");
                 });
 
         // My second checbox listener
         checkbox2.selectedProperty().addListener(
                 (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
                     textfield3.setText("My second checkbox has been clicked!");
+                    System.out.println("My second checkbox has been clicked!");
                 });
 
         // My first radio button listener
         radioButton.selectedProperty().addListener(
                 (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
                     textfield3.setText("My first radio button has been clicked!");
+                    System.out.println("My first radio button has been clicked!");
                 });
 
         // My second radio button listener
         radioButton2.selectedProperty().addListener(
                 (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
                     textfield3.setText("My second radio button has been clicked!");
+                    System.out.println("My second radio button has been clicked!");
                 });
 
-        //Creating a Group object
+        // My first slider listener
+        slider.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(
+                    ObservableValue<? extends Number> observableValue,
+                    Number oldValue,
+                    Number newValue) {
+                textfield3.setText("The main slider value is: " + String.valueOf(newValue.intValue()));
+                System.out.println("The main slider value is: " + String.valueOf(newValue.intValue()));
+            }
+        });
+
+        // My first slider listener
+        scrollbar2.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(
+                    ObservableValue<? extends Number> observableValue,
+                    Number oldValue,
+                    Number newValue) {
+                textfield3.setText("The 1st slider value is: " + String.valueOf(newValue.intValue()));
+                System.out.println("The 1st slider value is: " + String.valueOf(newValue.intValue()));
+            }
+        });
+
+        // My first slider listener
+        scrollbar3.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(
+                    ObservableValue<? extends Number> observableValue,
+                    Number oldValue,
+                    Number newValue) {
+                textfield3.setText("The 2nd slider value is: " + String.valueOf(newValue.intValue()));
+                System.out.println("The 2nd slider value is: " + String.valueOf(newValue.intValue()));
+            }
+        });
+
+        // My first slider listener
+        scrollbar4.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(
+                    ObservableValue<? extends Number> observableValue,
+                    Number oldValue,
+                    Number newValue) {
+                textfield3.setText("The 3rd slider value is: " + String.valueOf(newValue.intValue()));
+                System.out.println("The 3rd slider value is: " + String.valueOf(newValue.intValue()));
+            }
+        });
+
+        // Combobox listener
+        combobox.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
+                    textfield3.setText((String) newValue);
+                    System.out.println(newValue);
+                }
+        );
+
+
+        // Spinner 1 listener
+        spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
+            textfield3.setText("Spinner 1 value: " + newValue);
+            System.out.println("Spinner 1 value: " + newValue);
+        }
+        );
+
+        // Spinner 2 listener
+        spinner2.valueProperty().addListener((obs, oldValue, newValue) -> {
+            textfield3.setText("Spinner 2 value: " + newValue);
+            System.out.println("Spinner 2 value: " + newValue);
+        });
+
+        // Spinner 3 listener
+        spinner3.valueProperty().addListener((obs, oldValue, newValue) -> {
+            textfield3.setText("Spinner 3 value: " + newValue);
+            System.out.println("Spinner 3 value: " + newValue);
+        });
+
+        // Button 1 action handler
+        button.setOnAction(a -> textfield3.setText("Browser button was just clicked!"));
+        button.setOnAction(a -> System.out.println("Browser button was just clicked!"));
+
+        // Button 2 action handler
+        button2.setOnAction(a -> System.out.println("Submit button was just clicked!"));
+
+        // Button 3 action handler
+        button3.setOnAction(a -> System.out.println("Cancel button was just clicked!"));
+
+
+        // Combining all the objects under a grid object
         grid.getChildren().addAll(
                 text,
                 text2,

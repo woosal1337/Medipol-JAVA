@@ -215,9 +215,18 @@ public class Main extends Application {
                 (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
                     textfield3.setText("My second checkbox has been clicked!");
                 });
-        
+
         // My first radio button listener
-        radioButton
+        radioButton.selectedProperty().addListener(
+                (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
+                    textfield3.setText("My first radio button has been clicked!");
+                });
+
+        // My second radio button listener
+        radioButton2.selectedProperty().addListener(
+                (ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) -> {
+                    textfield3.setText("My second radio button has been clicked!");
+                });
 
         //Creating a Group object
         grid.getChildren().addAll(

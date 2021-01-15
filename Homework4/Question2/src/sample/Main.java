@@ -290,9 +290,9 @@ public class Main extends Application {
 
         // Spinner 1 listener
         spinner.valueProperty().addListener((obs, oldValue, newValue) -> {
-            textfield3.setText("Spinner 1 value: " + newValue);
-            System.out.println("Spinner 1 value: " + newValue);
-        }
+                    textfield3.setText("Spinner 1 value: " + newValue);
+                    System.out.println("Spinner 1 value: " + newValue);
+                }
         );
 
         // Spinner 2 listener
